@@ -8,9 +8,9 @@ Prerequisites:
 * A Linux virtual machine for hosting (tested on Ubuntu 24.04.1 LTS (server))
 * SSL certificate
 
-Install Docker (including Docker Compose).
+Install [Docker](https://docs.docker.com/engine/install/ubuntu/) (make sure to include Docker Compose).
 
-Install [Nvidia Container Toolkit](https://github.com/ollama/ollama/blob/main/docs/docker.md) (required for Nvidia GPUs).
+If you have Nvidia GPU, install Nvidia Container Toolkit. You can follow instructions in the [Ollama documentation](https://github.com/ollama/ollama/blob/main/docs/docker.md).
 
 Install git:
 ```bash
