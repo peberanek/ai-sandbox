@@ -1,12 +1,15 @@
 # AI Sandbox
 
-Deployment guide for an AI sandboxing application developed for Charles University ("UK AI Sandbox")
+Deployment guide for an AI sandbox, based on [Open WebUI](https://docs.openwebui.com/) and [Ollama](https://ollama.com/)
 
 ## Installation
 
+> [!NOTE]
+> This guide covers server deployment. If you prefer to run the sandbox on your own computer, follow [the desktop deployment guide](desktop_deployment.md).
+
 Prerequisites:
-* A Linux virtual machine for hosting (tested on Ubuntu 24.04.1 LTS (server))
-* SSL certificate
+* A Linux server for hosting (tested on Ubuntu 24.04.1 LTS (server))
+* SSL certificate for HTTPS
 
 Install [Docker](https://docs.docker.com/engine/install/ubuntu/) (make sure to include Docker Compose).
 
