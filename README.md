@@ -1,6 +1,8 @@
 # AI Sandbox
 
-Deployment guide for an AI sandbox, based on [Open WebUI](https://docs.openwebui.com/) and [Ollama](https://ollama.com/)
+Opinionated deployment guide for an AI sandbox, based on [Open WebUI](https://docs.openwebui.com/) and [Ollama](https://ollama.com/)
+
+![Opening Screenshot](assets/opening_screenshot.png)
 
 ## Installation
 
@@ -35,19 +37,22 @@ cp path/to/your_ssl_private_key ssl/nginx.key  # Nginx expects this filename!
 
 Update `conf.d/open-webui.conf` according to your network setup (see TODO in the file).
 
-Review `docker-compose.yml` and, if necessary, update it according to your needs.
+If necessary, update `docker-compose.yml` according to your setup (see TODO in the file).
 
-Start Docker Compose:
+Pull and run the Docker compose (this may take some time):
 ```bash
 docker compose up -d
 ```
 
-Once the compose is up and running, the web interface ([Open WebUI](https://docs.openwebui.com/)) should be available at https://YOUR_DOMAIN_OR_IP.
+Once the compose is running, the web interface (Open WebUI) should be available at https://YOUR_DOMAIN_OR_IP. It may take some time to Nginx to serve it.
 
 ## Configuration: WIP
 
 ### Open WebUI
 
-Log in the Open WebUI. The first user that logs in becomes administrator (note: admin priviledges of this user cannot be removed).
+> [!IMPORTANT]
+> **Admin Creation**: The first account created on Open WebUI gains Administrator privileges, controlling user management and system settings. (Administrator priviledges of this account cannot be removed.)
+>
+> **User Registrations**: Subsequent sign-ups start with Pending status, requiring Administrator approval for access. (New sign-ups are disabled by default. Click on your name in the bottom left corner, then see _Admin panel > Settings > General Settings > Enable New Sign Ups_)
 
-TODO: configure models, external connections, allow access to other users
+TODO: configure models, external connections

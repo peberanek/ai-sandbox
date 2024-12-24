@@ -10,7 +10,7 @@ services:
     tty: true
     restart: unless-stopped
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
-    # For Nvidia GPU support. Remove if not needed.
+    # TODO: Comment out this block if you don't need support for Nvidia GPUs.
     deploy:
       resources:
         reservations:
