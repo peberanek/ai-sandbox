@@ -4,6 +4,30 @@ Opinionated deployment guide for an AI sandbox, based on [Open WebUI](https://do
 
 ![Opening Screenshot](assets/opening_screenshot.png)
 
+## About
+
+Inspired by [Harvard AI Sandbox](https://huit.harvard.edu/ai-sandbox), the goal of this application is to provide an **easy-to-access and secure environment** for experimenting and working with Generative AI. _Easy-to-access_ means the sandbox may run as a multi-user web app (supporting multiple authentication methods) or as a private instance on a personal computer. _Secure_ means the data entered will not be, by default, used for training of any large language model (LLM).
+
+### Features Include
+
+* Support for multiple models of Generative AI.
+* The ability to upload multiple files.
+* Image generation.
+* Tools (e.g. [web search](https://docs.openwebui.com/tutorials/integrations/web_search)) and [artifacts](https://docs.openwebui.com/features/code-execution/artifacts/).
+* [Customized models (assistants)](https://docs.openwebui.com/features/workspace/models) and [Knowledge](https://docs.openwebui.com/features/workspace/knowledge) for better responses.
+* Speech-to-text and text-to-speech capabilities.
+* Multilingual support (including Czech).
+
+For the full list of features see [Open WebUI Features](https://docs.openwebui.com/features/).
+
+### Additional Benefits
+
+* Built-in support for running [open-source models](https://ollama.com/search).
+* The ability to connect to virtually any 3rd party vendor via [Functions and Pipelines](https://docs.openwebui.com/features/plugin/) (e.g. OpenAI (built-in), [Anthropic](https://openwebui.com/f/justinrahb/anthropic), [Google](https://openwebui.com/f/justinrahb/google_genai), [Azure OpenAI](https://openwebui.com/f/nomppy/azure), and [more](https://openwebui.com/functions)). Make sure to **audit any source code** before importing it into the Open WebUI, and to **read the 3rd party API terms and conditions** to keep your data secure.
+* It may be difficult for institutions to get acceptable offerings from companies like OpenAI, Anthropic or Google for their chatbots, especially when aiming for gradual and cost-effective deployment. Enterprise subscriptions often require high minimum commitments, while using these services via their APIs (which the sandbox enables) allows for pay-as-you-go pricing that can be much cheaper for many users.
+* Being composed from popular open-source projects ([Open WebUI](https://docs.openwebui.com/), [Ollama](https://ollama.com/), [Nginx](https://nginx.org/en/)), the sandbox is modular and extensible.
+* Providing users with an easy-to-access and secure environment mitigates their motivation to use Shadow AI, i.e., unknown, unapproved, and potentially unsafe AI tools.
+
 ## Installation
 
 > [!NOTE]
@@ -46,7 +70,7 @@ docker compose up -d
 
 Once the compose is running, the web interface (Open WebUI) should be available at https://YOUR_DOMAIN_OR_IP. It may take some time to Nginx to serve it.
 
-## Configuration: WIP
+## Configuration (WIP)
 
 ### Open WebUI
 
