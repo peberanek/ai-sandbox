@@ -25,7 +25,7 @@ For the full list of features see [Open WebUI Features](https://docs.openwebui.c
 * Built-in support for running [open-source models](https://ollama.com/search).
 * The ability to connect to virtually any 3rd party vendor via [Functions and Pipelines](https://docs.openwebui.com/features/plugin/) (e.g. OpenAI (built-in), [Anthropic](https://openwebui.com/f/justinrahb/anthropic), [Google](https://openwebui.com/f/justinrahb/google_genai), [Azure OpenAI](https://openwebui.com/f/nomppy/azure), and [more](https://openwebui.com/functions)). Make sure to **audit any source code** before importing it into the Open WebUI, and to **read the 3rd party API terms and conditions** to keep your data secure.
 * It may be difficult for institutions to get acceptable offerings from companies like OpenAI, Anthropic or Google for their chatbots, especially when aiming for gradual and cost-effective deployment. Enterprise subscriptions often require high minimum commitments, while using these services via their APIs (which the sandbox enables) allows for pay-as-you-go pricing that can be much cheaper for many users.
-* Being composed from popular open-source projects ([Open WebUI](https://docs.openwebui.com/), [Ollama](https://ollama.com/), [Nginx](https://nginx.org/en/)), the sandbox is modular and extensible.
+* Being composed from popular open-source projects ([Open WebUI](https://docs.openwebui.com/), [Ollama](https://ollama.com/), [Nginx](https://nginx.org/en/), [Watchtower](https://containrrr.dev/watchtower/)), the sandbox is modular and extensible.
 * Providing users with an easy-to-access and secure environment mitigates their motivation to use Shadow AI, i.e., unknown, unapproved, and potentially unsafe AI tools.
 
 ## Installation
