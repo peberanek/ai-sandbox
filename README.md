@@ -1,5 +1,8 @@
 # AI Sandbox
 
+> [!WARNING]
+> This guide is still a work in progress (WIP). Some things may be incomplete or broken. PRs welcome!
+
 Opinionated deployment guide for an AI sandbox, based on [Open WebUI](https://docs.openwebui.com/) and [Ollama](https://ollama.com/)
 
 ![Opening Screenshot](assets/opening_screenshot.png)
