@@ -15,7 +15,6 @@ services:
     volumes:
       - ollama:/root/.ollama
     container_name: ollama
-    pull_policy: always
     tty: true
     restart: unless-stopped
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
