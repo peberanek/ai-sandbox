@@ -90,3 +90,9 @@ Once the compose is running, the web interface (Open WebUI) should be available 
 > **User Registrations**: Subsequent sign-ups start with Pending status, requiring Administrator approval for access. (New sign-ups are disabled by default. Click on your name in the bottom left corner, then see _Admin panel > Settings > General Settings > Enable New Sign Ups_)
 
 TODO: configure models, external connections
+
+TODO: switch Ollama to release mode in production
+
+TODO: resolve `WARNING: CORS_ALLOW_ORIGIN IS SET TO '*' - NOT RECOMMENDED FOR PRODUCTION DEPLOYMENTS.` (https://github.com/open-webui/open-webui/pull/4714)
+
+TODO: setup a reasonable update time and interval for Watchtower. It seems the default behavior is run-once. No more checks then!
