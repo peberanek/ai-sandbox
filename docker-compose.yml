@@ -12,12 +12,12 @@ services:
     command: nginx
 
   ollama:
+    image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
+    container_name: ollama
     volumes:
       - ollama:/root/.ollama
-    container_name: ollama
     tty: true
     restart: unless-stopped
-    image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
     # TODO: Comment out this block if you don't need support for Nvidia GPUs.
     deploy:
       resources:
@@ -30,10 +30,10 @@ services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
     container_name: open-webui
-    volumes:
-      - open-webui:/app/backend/data
     depends_on:
       - ollama
+    volumes:
+      - open-webui:/app/backend/data
     environment:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
     extra_hosts:
@@ -45,11 +45,11 @@ services:
     container_name: nginx
     depends_on:
       - open-webui
-    ports:
-      - "443:443"
     volumes:
       - ./conf.d:/etc/nginx/conf.d
       - ./ssl:/etc/nginx/ssl
+    ports:
+      - "443:443"
     restart: unless-stopped
 
 volumes:
