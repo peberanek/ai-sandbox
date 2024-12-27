@@ -1,2 +1,3 @@
-# For privacy and security reasons, exclude the following dirs
+# For privacy and security reasons, exclude the following dirs and files
 ssl/
+.env

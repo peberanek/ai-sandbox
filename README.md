@@ -59,9 +59,16 @@ cp path/to/your_ssl_certificate ssl/nginx.crt  # Nginx expects this filename!
 cp path/to/your_ssl_private_key ssl/nginx.key  # Nginx expects this filename!
 ```
 
-Update `conf.d/open-webui.conf` according to your network setup (see TODO in the file).
+Modify `conf.d/open-webui.conf` according to your network setup (see TODO in the file).
 
-If necessary, update `docker-compose.yml` according to your setup (see TODO in the file).
+> [!NOTE]
+> For production environments it is recommended to pin a release tag of Open WebUI and Ollama to prevent issues from unplanned updates:
+> ```bash
+> cp .env.example .env
+> ```
+> Then modify contents of `.env` according your preferences.
+
+If necessary, modify `docker-compose.yml` according to your setup (see TODO in the file).
 
 Pull and run the Docker compose (this may take some time):
 ```bash
