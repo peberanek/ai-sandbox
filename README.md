@@ -84,6 +84,22 @@ docker compose up -d
 
 Once the compose is running, the web interface (Open WebUI) should be available at https://YOUR_DOMAIN_OR_IP. It may take some time to Nginx to serve it.
 
+## Updates
+
+Nginx is updated automatically by Watchtower. Open WebUI and Ollama need manual update.
+
+First, stop the compose and remove all components (containers, networks, ...):
+```bash
+docker compose down
+```
+
+If you pinned specific release tags in `.env`, update them accordingly.
+
+Then run the compose again:
+```bash
+docker compose up -d
+```
+
 ## Configuration (WIP)
 
 ### Open WebUI
