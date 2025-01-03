@@ -65,11 +65,15 @@ cp path/to/your_ssl_private_key ssl/nginx.key  # Nginx expects this filename!
 Modify `conf.d/open-webui.conf` according to your network setup (see TODO in the file).
 
 > [!NOTE]
-> For production environments it is recommended to pin a release tag of Open WebUI and Ollama to prevent issues from unplanned updates:
+> For production environments it is recommended to pin a release tag of Open WebUI and Ollama to prevent [update issues](https://github.com/open-webui/open-webui/issues/8074):
 > ```bash
 > cp .env.example .env
 > ```
-> Then modify contents of `.env` according your preferences.
+> Then modify contents of `.env` according your preferences, e.g.:
+> ```
+> OLLAMA_DOCKER_TAG='0.5.4'
+> WEBUI_DOCKER_TAG='v0.4.8'
+> ```
 
 If necessary, modify `docker-compose.yml` according to your setup (see TODO in the file).
 
