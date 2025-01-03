@@ -111,8 +111,6 @@ docker compose up -d
 
 TODO: configure models, external connections
 
-TODO: switch Ollama to release mode in production
-
 TODO: resolve `WARNING: CORS_ALLOW_ORIGIN IS SET TO '*' - NOT RECOMMENDED FOR PRODUCTION DEPLOYMENTS.` (https://github.com/open-webui/open-webui/pull/4714)
 
 TODO: setup a reasonable update time and interval for Watchtower. It seems the default behavior is run-once. No more checks then!
