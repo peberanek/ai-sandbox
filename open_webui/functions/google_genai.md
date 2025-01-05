@@ -6,13 +6,16 @@ Source: https://openwebui.com/f/justinrahb/google_genai
 * Function ID: `google_genai`
 * Function Description: `Gemini Manifold Pipe`
 
+Changelog:
+* Fixed `Error: Invalid model name format` (a breaking change in the Google API).
+
 ```python
 """
 title: Gemini Manifold Pipe
 author: justinh-rahb
 author_url: https://github.com/justinh-rahb
 funding_url: https://github.com/open-webui
-version: 0.1.4
+version: 0.1.5
 license: MIT
 """
 
@@ -80,8 +83,8 @@ class Pipe:
             genai.configure(api_key=self.valves.GOOGLE_API_KEY)
             model_id = body["model"]
 
-            if model_id.startswith("google_genai."):
-                model_id = model_id[12:]
+            if model_id.startswith("google_gemini."):
+                model_id = model_id[13:]
 
             model_id = model_id.lstrip(".")
 
