@@ -86,6 +86,17 @@ Once the compose is running, the web interface (Open WebUI) should be available 
 
 ## Updates
 
+### Project and config files
+
+Update the project and config files:
+```bash
+git pull --rebase
+```
+
+Review `.env.example` if it has changed, and update your `.env` accordingly if needed.
+
+### Container images
+
 Nginx is updated automatically by Watchtower. Open WebUI and Ollama need manual update.
 
 First, stop the compose and remove all components (containers, networks, ...):
