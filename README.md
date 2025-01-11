@@ -1,7 +1,7 @@
 # AI Sandbox
 
-> [!WARNING]
-> This guide is still a work in progress (WIP). Some things may be incomplete or broken. PRs welcome!
+> [!NOTE]
+> This guide is still a work in progress (WIP). PRs welcome!
 
 Opinionated deployment guide for an AI sandbox, based on [Open WebUI](https://docs.openwebui.com/) and [Ollama](https://ollama.com/)
 
@@ -82,7 +82,7 @@ Pull and run the Docker compose (this may take some time):
 docker compose up -d
 ```
 
-Once the compose is running, the web interface (Open WebUI) should be available at https://YOUR_DOMAIN_OR_IP. It may take some time to Nginx to serve it.
+Once the compose is running, the web interface (Open WebUI) should be available at https://YOUR_DOMAIN_OR_IP (Nginx may temporarily return HTTP 502 error).
 
 ## Updates
 
