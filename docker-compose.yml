@@ -40,6 +40,19 @@ services:
       - host.docker.internal:host-gateway
     restart: unless-stopped
 
+  open-webui-pipelines:
+    image: ghcr.io/open-webui/pipelines:main
+    container_name: open-webui-pipelines
+    depends_on:
+      - open-webui
+    ports:
+      - "9099:9099"
+    volumes:
+      - open-webui-pipelines:/app/pipelines
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+
   nginx:
     image: nginx:alpine
     container_name: nginx
@@ -55,3 +68,4 @@ services:
 volumes:
   ollama: {}
   open-webui: {}
+  open-webui-pipelines: {}
