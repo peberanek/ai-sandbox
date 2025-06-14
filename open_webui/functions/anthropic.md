@@ -14,7 +14,7 @@ title: Anthropic Manifold Pipe
 authors: justinh-rahb and christian-taillon
 author_url: https://github.com/justinh-rahb
 funding_url: https://github.com/open-webui
-version: 0.2.4
+version: 0.2.5
 required_open_webui_version: 0.3.17
 license: MIT
 """
@@ -52,6 +52,8 @@ class Pipe:
             {"id": "claude-3-5-sonnet-20240620", "name": "claude-3.5-sonnet"},
             {"id": "claude-3-5-sonnet-20241022", "name": "claude-3.5-sonnet"},
             {"id": "claude-3-5-sonnet-latest", "name": "claude-3.5-sonnet"},
+            {"id": "claude-3-7-sonnet-20250219", "name": "claude-3.7-sonnet"},
+            {"id": "claude-3-7-sonnet-latest", "name": "claude-3.7-sonnet"},
         ]
 
     def pipes(self) -> List[dict]:
