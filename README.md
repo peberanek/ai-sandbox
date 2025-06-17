@@ -25,7 +25,7 @@ Popular, feature-rich Web UI (chatbot interface) for interacting with large lang
 > [!IMPORTANT]
 > The first account created gains Administrator privileges, controlling user management and system settings. As a security feature, *these privileges cannot be removed and the account cannot be deleted*.
 
-* If installing Open WebUI for a single user on a desktop, setting `WEBUI_AUTH` env var to `False` spares the user the need to authenticate.
+* If installing Open WebUI for a single user on a desktop, [setting `WEBUI_AUTH` env var to `False`](https://docs.openwebui.com/getting-started/env-configuration/#webui_auth) spares the user the need to authenticate.
 
 ### Inference Servers
 #### Ollama
