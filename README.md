@@ -4,7 +4,7 @@ An open-source implementation of the [Harvard AI Sandbox](https://huit.harvard.e
 ![Opening Screenshot](assets/open_webui.gif)
 _Above: Open WebUI serving as graphical user interface of the AI Sandbox._
 
-Some components (see below) can be installed on desktop for maximum privacy (Open WebUI + Ollama), or on a server for multi-user environments. The system supports local models (like Llama, Gemma or DeepSeek), or external models (like ChatGPT-4o, GPT-4.1 or o3) via OpenAI-compatible connections.
+Some components (see below) can be installed on desktop for maximum privacy (Open WebUI + Ollama), or on a server for multi-user environments. The system supports local models (like Llama, Gemma or DeepSeek), or external models (like ChatGPT-4o, GPT-4.1 or o3) via OpenAI-compatible connections. When connecting an external model, always review the provider's terms of service and data policies to ensure they don't train their models on your inputs or conversations.
 
 ## Components
 ### Graphical User Interface
