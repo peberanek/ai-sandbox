@@ -1,0 +1,8 @@
+[project]
+name = "ai-api-gateway"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=2.6.1",
+    "pandas>=2.3.3",
+]

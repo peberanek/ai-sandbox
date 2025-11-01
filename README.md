@@ -1,45 +1,62 @@
 # AI Sandbox
-An open-source implementation of the [Harvard AI Sandbox](https://huit.harvard.edu/ai-sandbox). This project aims to provide a secure, modular environment for working and experimenting with generative AI.
 
-![Opening Screenshot](assets/open_webui.gif)
-_Above: Open WebUI serving as graphical user interface of the AI Sandbox._
+Open source platform for flexible centralized access to generative AI
 
-Some components (see below) can be installed on desktop for maximum privacy (Open WebUI + Ollama), or on a server for multi-user environments. The system supports local models (like Llama, Gemma or DeepSeek), or external models (like ChatGPT-4o, GPT-4.1 or o3) via OpenAI-compatible connections. When connecting an external model, always review the provider's terms of service and data policies to ensure they don't train their models on your inputs or conversations.
+## Motivation
+
+For Czech universities, establishing institution‑wide agreements with providers such as OpenAI or Anthropic can be surprisingly difficult. As a result, deploying tools like ChatGPT Edu may not be a viable option.
+
+Other solutions, such as Microsoft Copilot or Google Gemini—included for free within broader product packages—typically lack advanced features tailored for teaching or research.
+
+Users are also concerned about how chatbot providers process and store their data. This is especially true for free services, which often use submitted inputs for further model training. As a result, both institutions and individuals seek more transparent and secure solutions — ideally ones that allow sensitive data to stay under their own control or within on‑premise deployments of open weights models.
+
+Finally, there is growing interest in using AI models through APIs. However, managing accounts and settings across multiple providers can be complicated and time‑consuming.
+
+**AI Sandbox** explores and uses existing open‑source projects to address these needs. It builds on similar university initiatives abroad ([Harvard AI Sandbox](https://www.huit.harvard.edu/ai-sandbox), [Stanford AI Playground](https://uit.stanford.edu/aiplayground)) and in the Czech Republic ([CERIT-SC Chat AI](https://docs.cerit.io/en/docs/web-apps/chat-ai)).
+
+## Try it
+
+1. If you are a member of a Czech academic institution, complete the [MetaCentrum registration](https://metavo.metacentrum.cz/cs/application/index.html). Once your registration is approved, you can [log in to **Chat AI**](https://chat.ai.e-infra.cz/) mentioned above. Models can also be accessed via API — see the [documentation for details](https://docs.cerit.io/en/docs/web-apps/chat-ai).
+
+2. If you want to run it on your own hardware, see the [`demos/docker-compose`](./demos/docker-compose) directory for setup instructions.  
+
+3. If you are considering deploying an instance for your organization, you can contact [e‑INFRA CZ](https://docs.e-infra.cz/) to [request a dedicated clone](https://blog.e-infra.cz/blog/chat-ai/#dedicated-webui-clones).
+
+## Overview
+
+![A simple overview of the AI Sandbox](/assets/ai_sandbox.drawio.png)
 
 ## Components
-### Graphical User Interface
-#### Open WebUI
-Popular, feature-rich Web UI (chatbot interface) for interacting with large language models. Installable both on desktop (single user, see [minimum system requirements](https://github.com/open-webui/open-webui/discussions/736)) and on a server (multi user).
-* [Installation](https://docs.openwebui.com/getting-started/quick-start/)
-* [Documentation](https://docs.openwebui.com/)
 
-##### Selected Features
-* Chat with local models like Llama, Gemma or DeepSeek (via Ollama or vLLM, see section Inference Servers)
-* Chat with external models like ChatGPT-4o or o3 via [OpenAI connections](https://docs.openwebui.com/getting-started/quick-start/starting-with-openai) (or [OpenAI-compatible](https://docs.openwebui.com/getting-started/quick-start/starting-with-openai-compatible)). Other models (like Claude or Gemini) may be connected via an LLM proxy or via [custom Functions](https://openwebui.com/functions) and [Pipelines](https://github.com/open-webui/pipelines) (Functions and Pipelines, however, may not support all features and may be harder to maintain because of changing APIs)
-* Support for [SSO](https://docs.openwebui.com/features/sso/)
-* Build [Models (assistants)](https://docs.openwebui.com/features/workspace/models) with [knowledge](https://docs.openwebui.com/features/workspace/knowledge) (via [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation))
-* Built-in tools like [web search](https://docs.openwebui.com/category/-web-search), code interpreter and [image generation](https://docs.openwebui.com/tutorials/images)
-* Extensible via custom [Tools, Functions and Pipelines](https://docs.openwebui.com/features/plugin/)
+### Chatbot
 
-##### Notes
-> [!IMPORTANT]
-> The first account created gains Administrator privileges, controlling user management and system settings. As a security feature, *these privileges cannot be removed and the account cannot be deleted*.
+The chatbot component uses [**Open WebUI**](https://docs.openwebui.com/), an open‑source web interface for interacting with large language models. It allows users to chat with both open weights and proprietary models (e.g., gpt‑oss, Llama, GPT‑5, Claude, Gemini), create custom assistants, or use built‑in tools such as web search, code interpreter, and image generation. Its functionality can be extended via custom tools, functions and pipelines and has support for SSO.
 
-* If installing Open WebUI for a single user on a desktop, [setting `WEBUI_AUTH` env var to `False`](https://docs.openwebui.com/getting-started/env-configuration/#webui_auth) spares the user the need to authenticate.
+> [!NOTE]  
+> Other university projects, such as the Harvard AI Sandbox and Stanford AI Playground, use [LibreChat](https://www.librechat.ai/docs). At the time of evaluation, however, it lacked features such as an admin UI for user management and had not been tested with this setup.
 
-### Inference Servers
-#### Ollama
-Well integrated with Open WebUI. Not optimized for multiuser environments (consider using vLLM instead).
-* [Installation](https://github.com/ollama/ollama/blob/main/README.md)
-* [Documentation](https://github.com/ollama/ollama/tree/main/docs#documentation)
-* [Models](https://ollama.com/search)
+### AI API Gateway
 
-#### vLLM
-Fast LLM inference. Installation and model deployment may be more complex than Ollama.
-* [Installation](https://docs.vllm.ai/en/stable/getting_started/installation/index.html)
-* [Documentation](https://docs.vllm.ai/en/stable/)
+The AI API Gateway component uses [**LiteLLM**](https://docs.litellm.ai/docs/), an open‑source Python SDK and proxy server that connects to a wide range of LLM providers, including on‑premise deployments. It supports user self‑service, cost limits, and usage tracking.
+
+### Inference
+
+#### On-premise
+
+The most common options are [**Ollama**](https://ollama.com/), [**vLLM**](https://docs.vllm.ai/en/stable/) or [**SGLang**](https://docs.sglang.ai/), each with its own trade‑offs and limitations. For a detailed overview and real‑world experience from a production deployment, see the e‑INFRA CZ articles: [part 1](https://blog.e-infra.cz/blog/run-llm/) and [part 2](https://blog.e-infra.cz/blog/run-llm2/).
+
+#### Cloud Providers
+
+For Czech academic institutions, a practical option may be to contact [**e‑INFRA CZ**](https://docs.e-infra.cz/) and request access to their hosted models via API. Alternatively, large providers such as [Microsoft Azure AI Foundry](https://ai.azure.com/), [Google Vertex AI Platform](https://cloud.google.com/vertex-ai), or platforms like [OpenRouter](https://openrouter.ai/) also offer model inference services. _However, their suitability — particularly in terms of data privacy and security — should be carefully evaluated._
 
 ## Roadmap
-* Implementation of spending limits for external models (in progress)
-* Finding an optimal embedding model for Czech
-* Verifying feasibility of [LiteLLM as LLM proxy server for Open WebUI](https://docs.litellm.ai/docs/tutorials/openweb_ui)
+
+* **RAG Pipelines**: Although Open WebUI provides basic RAG functionality to enhance model inference with external data (e.g., from documents), finding the right combination of an embedding model — especially one that performs well with smaller languages like Czech — and a suitable vector database has proved challenging. Currently, e‑INFRA CZ uses OpenSearch with qwen3‑embedding‑4b, but the results are not yet ideal. For some details, see their article [AI Docs Search](https://blog.e-infra.cz/blog/embedders/). This remains an area of ongoing research.
+
+* **Cost tracking and limiting**: Open WebUI currently lacks features for cost tracking and spending limits on paid models. Such functionality needs to be implemented to prevent uncontrolled costs, either through built‑in LiteLLM features (preferred) or with a custom extension such as the [Open WebUI Credit System](https://github.com/kivzcu/openwebui-credit-system).  
+
+* **User Guides**: For new users, working with the Open WebUI or LiteLLM interface can be challenging. A simple yet comprehensive user guide is needed. The AI Team of the Charles University Central Library is preparing a Czech version.  
+
+## Contact
+
+If you are interested in collaborating on this project, feel free to contact the AI Team of the Charles University Central Library at **ai@cuni.cz**.
