@@ -5,7 +5,7 @@ This demo shows how to run a simple script (`sentiment_classification.py`) that 
 This demo expects a running instance of LiteLLM, configured as LLM proxy (i.e. AI API Gateway) with some available models. The user needs a working API key (also known as Virtual Key) and the gateway URL.
 
 > [!NOTE]  
-> The script should also work with other OpenAI-compatible endpoints, like e.g. [OpenRouter](https://openrouter.ai/docs/quickstart).
+> The script should also work with other OpenAI-compatible APIs, like [OpenRouter](https://openrouter.ai/docs/quickstart).
 
 ## Install
 
