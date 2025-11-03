@@ -1,42 +1,59 @@
-# Running Demo Instance with Docker Compose
+# Docker Compose Demo
+
+This demo provides a simple deployment using Docker Compose for testing purposes.
+
+> [!WARNING]
+> **Not for production use** - This setup contains hardcoded credentials and is intended for local development only.
 
 ## Prerequisites
 
 1. Install and start [Docker Desktop](https://docs.docker.com/desktop/)
 
-1. If you haven't done it already, clone this repository and change to this directory:
-    ``` sh
-    git clone https://github.com/peberanek/ai-sandbox.git
-    cd ai-sandbox/demos/docker-compose
-    ```
+2. Clone this repository and navigate to this directory:
+   ```sh
+   git clone https://github.com/peberanek/ai-sandbox.git
+   cd ai-sandbox/demos/docker-compose
+   ```
 
-## Run Docker Compose
+## Getting Started
 
-> [!WARNING]  
-> Don't use for production deployment. There are hardcoded credential in the `docker-compose.yaml`.
+Start all services with Docker Compose:
 
-From within this directory run:
-
-``` sh
+```sh
 docker compose up
 ```
 
-It may take some time to pull and start up all the services. Open WebUI should be available at http://127.0.0.1:3000 (the first user that signs in becomes administrator). LiteLLM should be available at http://127.0.0.1:4000/ (admin UI: http://127.0.0.1:4000/ui/; username: `admin`, password: `sk-1234`).
+The first run may take several minutes to pull and initialize all services.
 
-You may interact with Ollama via Docker:
+### Access Points
 
-``` sh
+Once running, the following services will be available:
+
+- **Open WebUI**: http://127.0.0.1:3000
+  - The first user to sign up becomes the administrator
+- **LiteLLM API**: http://127.0.0.1:4000
+- **LiteLLM Admin UI**: http://127.0.0.1:4000/ui
+  - Username: `admin`
+  - Password: `sk-1234`
+
+### Interacting with Ollama
+
+You can interact with Ollama directly via Docker:
+
+```sh
 docker exec -it ollama ollama --help
+docker exec -it ollama ollama pull gemma3:270m
 ```
 
-## Open WebUI Settings
+## Configuration
 
-> [!NOTE]  
-> The initial start of the Open WebUI may be slow, as it downloads additional components.
+### Open WebUI Setup
 
-### Connecting to LiteLLM
+#### Connecting to LiteLLM
 
-Follow the [tutorial](https://docs.litellm.ai/docs/tutorials/openweb_ui):
+To connect Open WebUI to LiteLLM, follow the [official tutorial](https://docs.litellm.ai/docs/tutorials/openweb_ui):
 
-* When setting up the connection - preferably via _Admin Panel > Settings > Connections_ - set proxy URL to **`http://litellm:4000`**.
-* `ENABLE_FORWARD_USER_INFO_HEADERS` env var is already set in the `docker-compose.yaml`.
+1. Navigate to **Admin Panel > Settings > Connections** in Open WebUI
+2. Set the _API Base URL_ to: `http://litellm:4000`
+
+Note: The `ENABLE_FORWARD_USER_INFO_HEADERS` environment variable is already configured in `docker-compose.yaml`.

@@ -4,7 +4,7 @@ Open source platform for flexible centralized access to generative AI
 
 ## Motivation
 
-For Czech universities, establishing institution‑wide agreements with providers such as OpenAI or Anthropic can be surprisingly difficult. As a result, deploying tools like ChatGPT Edu may not be a viable option.
+For Czech universities, establishing institution‑wide agreements with providers such as OpenAI or Anthropic is difficult. As a result, deploying tools like ChatGPT Edu may not be a viable option.
 
 Other solutions, such as Microsoft Copilot or Google Gemini—included for free within broader product packages—typically lack advanced features tailored for teaching or research.
 
@@ -16,11 +16,11 @@ Finally, there is growing interest in using AI models through APIs. But managing
 
 ## Try it
 
-1. If you are a member of a Czech academic institution, complete the [MetaCentrum registration](https://metavo.metacentrum.cz/cs/application/index.html). Once your registration is approved, you can [log in to **Chat AI**](https://docs.cerit.io/en/docs/web-apps/chat-ai) mentioned above. It uses the same chatbot interface and models can also be accessed via API.
+1. If you are a member of a Czech academic institution, complete the [MetaCentrum registration](https://metavo.metacentrum.cz/cs/application/index.html). Once your registration is approved, you can [log in to **Chat AI**](https://docs.cerit.io/en/docs/web-apps/chat-ai) mentioned above. It uses the same chatbot interface, and models can also be accessed via API.
 
-2. If you want to run it on your own hardware, see the [`demos/docker-compose`](./demos/docker-compose) directory for setup instructions.  
+2. If you want to try it on your own hardware, see the [`demos/docker-compose`](./demos/docker-compose) directory for instructions.
 
-3. If you are considering deploying an instance for your organization, you can contact [e‑INFRA CZ](https://docs.e-infra.cz/) to [request a dedicated clone](https://blog.e-infra.cz/blog/chat-ai/#dedicated-webui-clones). (For academic institutions only)
+3. If you are considering deploying an instance for your organization, you can contact [e‑INFRA CZ](https://docs.e-infra.cz/) to [request a dedicated clone](https://blog.e-infra.cz/blog/chat-ai/#dedicated-webui-clones) (for academic institutions only).
 
 ## Overview
 
@@ -52,7 +52,7 @@ For Czech academic institutions, a practical option may be to contact [**e‑INF
 > [!NOTE]  
 > Regular **e‑INFRA CZ** services are not intended for processing sensitive or confidential data. For such use cases, a dedicated environment — for example, a variant of the [SensitiveCloud](https://docs.cerit.io/en/docs/sensitivecloud/account) — would be required.
 
-Alternatively, large providers such as [Microsoft Azure](https://ai.azure.com/), [Google Cloud](https://cloud.google.com/vertex-ai) (available through [OCRE](https://www.e-infra.cz/novinky/cloudove-sluzby-k-dispozici-uzivatelum-cesnet-prostrednictvim-ramcovych-smluv-ocre)), or platforms like [OpenRouter](https://openrouter.ai/) also offer model inference services. However, their suitability — particularly in terms of data privacy and security — should be carefully evaluated.
+Alternatively, large providers such as [Microsoft Azure](https://ai.azure.com/) , [Google Cloud](https://cloud.google.com/vertex-ai) (available through [OCRE](https://www.e-infra.cz/novinky/cloudove-sluzby-k-dispozici-uzivatelum-cesnet-prostrednictvim-ramcovych-smluv-ocre)), and platforms like OpenRouter also offer model inference services. Their suitability — particularly regarding data privacy and security — remains a topic for future evaluation.
 
 ## Roadmap
 
@@ -60,7 +60,7 @@ Alternatively, large providers such as [Microsoft Azure](https://ai.azure.com/),
 
 * **Cost tracking and limiting**: Open WebUI currently lacks features for cost tracking and spending limits on paid models. Such functionality needs to be implemented to prevent uncontrolled costs, either through built‑in LiteLLM features (preferred) or with a custom extension such as the [Open WebUI Credit System](https://github.com/kivzcu/openwebui-credit-system).  
 
-* **User Guides**: For new users, working with the Open WebUI or LiteLLM interface can be challenging. A simple yet comprehensive user guide is needed. The AI Team of the Charles University Central Library is preparing a Czech version.  
+* **User Guides**: For new users, working with the Open WebUI or LiteLLM interface on their own can be difficult. A simple yet comprehensive user guide is needed. The AI Team of the Charles University Central Library is preparing a Czech version.  
 
 ## Contact
 
