@@ -39,6 +39,11 @@ The chatbot component uses [**Open WebUI**](https://docs.openwebui.com/), an o
 
 The AI API Gateway component uses [**LiteLLM**](https://docs.litellm.ai/docs/), an open‑source Python SDK and proxy server that connects to a wide range of LLM providers, including on‑premise deployments. It supports user self‑service, cost limits, and usage tracking.
 
+> [!NOTE]  
+> You can try out **LiteLLM** through a [public demo](https://www.demo.litellm.ai/). You can also log in to the [Admin Panel](https://www.demo.litellm.ai/ui/) using **Username:** `admin` and **Password:** `sk-1234`.
+>  
+> Keep in mind that this is a shared environment — anything you enter, including data or credentials, is visible to others.
+
 ### Inference
 
 #### On-premise
