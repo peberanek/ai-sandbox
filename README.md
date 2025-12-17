@@ -59,11 +59,15 @@ For Czech academic institutions, a practical option may be to contact [**e‑INF
 
 Alternatively, large providers such as [Microsoft Azure](https://ai.azure.com/) , [Google Cloud](https://cloud.google.com/vertex-ai) (available through [OCRE](https://www.e-infra.cz/novinky/cloudove-sluzby-k-dispozici-uzivatelum-cesnet-prostrednictvim-ramcovych-smluv-ocre)), and platforms like OpenRouter also offer model inference services. Their suitability — particularly regarding data privacy and security — remains a topic for future evaluation.
 
+## Integrations
+
+For additional integrations (like spending management) see `integrations/`.
+
+Alternatively, Miloslav Konopík (Department of Computer Science and Engineering, University of West Bohemia) developed [Open WebUI Credit System](https://github.com/kivzcu/openwebui-credit-system) with some limitations (e.g. does not limit spending via API).
+
 ## Roadmap
 
-* **RAG Pipelines**: Although Open WebUI provides basic RAG functionality to enhance model inference with external data (e.g., from documents), finding the right combination of an embedding model — especially one that performs well with smaller languages like Czech — and a suitable vector database has proved challenging. Currently, e‑INFRA CZ uses OpenSearch with qwen3‑embedding‑4b, but the results are not yet ideal. For some details, see their article [AI Docs Search](https://blog.e-infra.cz/blog/embedders/). This remains an area of ongoing research.
-
-* **Cost tracking and limiting**: Open WebUI currently lacks features for cost tracking and spending limits on paid models. Such functionality needs to be implemented to prevent uncontrolled costs, either through built‑in LiteLLM features (preferred) or with a custom extension such as the [Open WebUI Credit System](https://github.com/kivzcu/openwebui-credit-system).  
+* **RAG Pipelines**: Although Open WebUI provides basic RAG functionality to enhance model inference with external data (e.g., from documents), finding the right combination of an embedding model — especially one that performs well with smaller languages like Czech — and a suitable vector database has proved challenging. Currently, e‑INFRA CZ uses OpenSearch with qwen3‑embedding‑4b. For some details, see their article [AI Docs Search](https://blog.e-infra.cz/blog/embedders/). This remains an area of ongoing research.
 
 * **User Guides**: For new users, working with the Open WebUI or LiteLLM interface on their own can be difficult. A simple yet comprehensive user guide is needed. The AI Team of the Charles University Central Library is preparing a Czech version.  
 
