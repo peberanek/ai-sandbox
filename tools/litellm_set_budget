@@ -1,0 +1,6 @@
+#!/bin/bash
+
+curl -X POST "${LITELLM_URL}/budget/new" \
+-H 'Content-Type: application/json' \
+-H "Authorization: Bearer ${LITELLM_API_KEY}" \
+-d '{"max_budget": 0.0001, "budget_duration": "30d"}'
