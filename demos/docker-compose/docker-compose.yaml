@@ -4,7 +4,7 @@
 
 services:
   litellm:
-    image: ghcr.io/berriai/litellm:main-stable
+    image: ghcr.io/berriai/litellm:main-latest  # TODO: change back to stable?
     container_name: litellm
     ports:
       - "4000:4000"
@@ -65,7 +65,10 @@ services:
       - open-webui:/app/backend/data
     environment:
       OLLAMA_BASE_URL: "http://ollama:11434"
+      OPENAI_API_BASE_URL: "http://litellm:4000"
       WEBUI_SECRET_KEY: ""
+      ENABLE_FOLLOW_UP_GENERATION: "False"
+      ENABLE_TAGS_GENERATION: "False"
       ENABLE_FORWARD_USER_INFO_HEADERS: "True"
     depends_on:
       - ollama

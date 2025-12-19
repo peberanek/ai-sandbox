@@ -31,6 +31,9 @@ Once running, the following services will be available:
 
 - **Open WebUI**: http://127.0.0.1:3000
   - The first user to sign up becomes the administrator
+  - Username: `admin`
+  - Email: `admin@admin.com`  # TODO: change to `admin@example.com`
+  - Password: `12345`
 - **LiteLLM API**: http://127.0.0.1:4000
 - **LiteLLM Admin UI**: http://127.0.0.1:4000/ui
   - Username: `admin`
